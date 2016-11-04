@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5314CE741DCB31D0007D9E1E /* MJPlayer_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE6E1DCB31D0007D9E1E /* MJPlayer_pause.png */; };
+		5314CE751DCB31D0007D9E1E /* MJPlayer_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE6F1DCB31D0007D9E1E /* MJPlayer_pause@2x.png */; };
+		5314CE761DCB31D0007D9E1E /* MJPlayer_pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE701DCB31D0007D9E1E /* MJPlayer_pause@3x.png */; };
+		5314CE771DCB31D0007D9E1E /* MJPlayer_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE711DCB31D0007D9E1E /* MJPlayer_play.png */; };
+		5314CE781DCB31D0007D9E1E /* MJPlayer_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE721DCB31D0007D9E1E /* MJPlayer_play@2x.png */; };
+		5314CE791DCB31D0007D9E1E /* MJPlayer_play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE731DCB31D0007D9E1E /* MJPlayer_play@3x.png */; };
+		5314CE7D1DCB3219007D9E1E /* MJPlayer_slider.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE7A1DCB3219007D9E1E /* MJPlayer_slider.png */; };
+		5314CE7E1DCB3219007D9E1E /* MJPlayer_slider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE7B1DCB3219007D9E1E /* MJPlayer_slider@2x.png */; };
+		5314CE7F1DCB3219007D9E1E /* MJPlayer_slider@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE7C1DCB3219007D9E1E /* MJPlayer_slider@3x.png */; };
+		5314CE831DCB380E007D9E1E /* MJPlayer_fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE801DCB380E007D9E1E /* MJPlayer_fullscreen.png */; };
+		5314CE841DCB380E007D9E1E /* MJPlayer_fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE811DCB380E007D9E1E /* MJPlayer_fullscreen@2x.png */; };
+		5314CE851DCB380E007D9E1E /* MJPlayer_fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE821DCB380E007D9E1E /* MJPlayer_fullscreen@3x.png */; };
+		5314CE891DCB385E007D9E1E /* MJPlayer_shrinkscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE861DCB385E007D9E1E /* MJPlayer_shrinkscreen.png */; };
+		5314CE8A1DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE871DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png */; };
+		5314CE8B1DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE881DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png */; };
+		531AF8111DC71E420015221E /* MJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AF8101DC71E420015221E /* MJPlayerView.m */; };
+		53B101C41DC23B6E007FC2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C31DC23B6E007FC2DB /* main.m */; };
+		53B101C71DC23B6E007FC2DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C61DC23B6E007FC2DB /* AppDelegate.m */; };
+		53B101CA1DC23B6E007FC2DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C91DC23B6E007FC2DB /* ViewController.m */; };
+		53B101CD1DC23B6E007FC2DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B101CB1DC23B6E007FC2DB /* Main.storyboard */; };
+		53B101CF1DC23B6E007FC2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B101CE1DC23B6E007FC2DB /* Assets.xcassets */; };
+		53B101D21DC23B6E007FC2DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B101D01DC23B6E007FC2DB /* LaunchScreen.storyboard */; };
+		53B101DD1DC23B6F007FC2DB /* MJAVPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101DC1DC23B6F007FC2DB /* MJAVPlayerTests.m */; };
+		53B101E81DC23B6F007FC2DB /* MJAVPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101E71DC23B6F007FC2DB /* MJAVPlayerUITests.m */; };
+		53B101FA1DC23B9E007FC2DB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101F91DC23B9E007FC2DB /* MediaPlayer.framework */; };
+		53B101FC1DC23C6F007FC2DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101FB1DC23C6F007FC2DB /* AVFoundation.framework */; };
+		53B101FE1DC23C95007FC2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101FD1DC23C95007FC2DB /* Foundation.framework */; };
+		53B102001DC2419F007FC2DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101FF1DC2419F007FC2DB /* CoreGraphics.framework */; };
+		53B102021DC24274007FC2DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B102011DC24274007FC2DB /* UIKit.framework */; };
+		6C476545201B1A66D9DA2B20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274056531D2FA3D212E7D6F9 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53B101D91DC23B6F007FC2DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53B101B71DC23B6E007FC2DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53B101BE1DC23B6E007FC2DB;
+			remoteInfo = MJAVPlayer;
+		};
+		53B101E41DC23B6F007FC2DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53B101B71DC23B6E007FC2DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53B101BE1DC23B6E007FC2DB;
+			remoteInfo = MJAVPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		274056531D2FA3D212E7D6F9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		294FBF01DDCF6C2C905F5176 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4E1F85A9309508AD543CAF3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5314CE6E1DCB31D0007D9E1E /* MJPlayer_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MJPlayer_pause.png; sourceTree = "<group>"; };
+		5314CE6F1DCB31D0007D9E1E /* MJPlayer_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_pause@2x.png"; sourceTree = "<group>"; };
+		5314CE701DCB31D0007D9E1E /* MJPlayer_pause@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_pause@3x.png"; sourceTree = "<group>"; };
+		5314CE711DCB31D0007D9E1E /* MJPlayer_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MJPlayer_play.png; sourceTree = "<group>"; };
+		5314CE721DCB31D0007D9E1E /* MJPlayer_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_play@2x.png"; sourceTree = "<group>"; };
+		5314CE731DCB31D0007D9E1E /* MJPlayer_play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_play@3x.png"; sourceTree = "<group>"; };
+		5314CE7A1DCB3219007D9E1E /* MJPlayer_slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MJPlayer_slider.png; sourceTree = "<group>"; };
+		5314CE7B1DCB3219007D9E1E /* MJPlayer_slider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_slider@2x.png"; sourceTree = "<group>"; };
+		5314CE7C1DCB3219007D9E1E /* MJPlayer_slider@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_slider@3x.png"; sourceTree = "<group>"; };
+		5314CE801DCB380E007D9E1E /* MJPlayer_fullscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MJPlayer_fullscreen.png; sourceTree = "<group>"; };
+		5314CE811DCB380E007D9E1E /* MJPlayer_fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_fullscreen@2x.png"; sourceTree = "<group>"; };
+		5314CE821DCB380E007D9E1E /* MJPlayer_fullscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_fullscreen@3x.png"; sourceTree = "<group>"; };
+		5314CE861DCB385E007D9E1E /* MJPlayer_shrinkscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MJPlayer_shrinkscreen.png; sourceTree = "<group>"; };
+		5314CE871DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_shrinkscreen@2x.png"; sourceTree = "<group>"; };
+		5314CE881DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_shrinkscreen@3x.png"; sourceTree = "<group>"; };
+		531AF80F1DC71E420015221E /* MJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPlayerView.h; sourceTree = "<group>"; };
+		531AF8101DC71E420015221E /* MJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPlayerView.m; sourceTree = "<group>"; };
+		53B101BF1DC23B6E007FC2DB /* MJAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B101C31DC23B6E007FC2DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53B101C51DC23B6E007FC2DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		53B101C61DC23B6E007FC2DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		53B101C81DC23B6E007FC2DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		53B101C91DC23B6E007FC2DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		53B101CC1DC23B6E007FC2DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53B101CE1DC23B6E007FC2DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53B101D11DC23B6E007FC2DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53B101D31DC23B6E007FC2DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53B101D81DC23B6F007FC2DB /* MJAVPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJAVPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B101DC1DC23B6F007FC2DB /* MJAVPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJAVPlayerTests.m; sourceTree = "<group>"; };
+		53B101DE1DC23B6F007FC2DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53B101E31DC23B6F007FC2DB /* MJAVPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJAVPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B101E71DC23B6F007FC2DB /* MJAVPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJAVPlayerUITests.m; sourceTree = "<group>"; };
+		53B101E91DC23B6F007FC2DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53B101F91DC23B9E007FC2DB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		53B101FB1DC23C6F007FC2DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		53B101FD1DC23C95007FC2DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		53B101FF1DC2419F007FC2DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		53B102011DC24274007FC2DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53B101BC1DC23B6E007FC2DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B102021DC24274007FC2DB /* UIKit.framework in Frameworks */,
+				53B102001DC2419F007FC2DB /* CoreGraphics.framework in Frameworks */,
+				53B101FE1DC23C95007FC2DB /* Foundation.framework in Frameworks */,
+				53B101FC1DC23C6F007FC2DB /* AVFoundation.framework in Frameworks */,
+				53B101FA1DC23B9E007FC2DB /* MediaPlayer.framework in Frameworks */,
+				6C476545201B1A66D9DA2B20 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101D51DC23B6F007FC2DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101E01DC23B6F007FC2DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B238B941EECE57AEFBDCA0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				294FBF01DDCF6C2C905F5176 /* Pods.debug.xcconfig */,
+				4E1F85A9309508AD543CAF3C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5314CE6D1DCB31C7007D9E1E /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5314CE861DCB385E007D9E1E /* MJPlayer_shrinkscreen.png */,
+				5314CE871DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png */,
+				5314CE881DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png */,
+				5314CE801DCB380E007D9E1E /* MJPlayer_fullscreen.png */,
+				5314CE811DCB380E007D9E1E /* MJPlayer_fullscreen@2x.png */,
+				5314CE821DCB380E007D9E1E /* MJPlayer_fullscreen@3x.png */,
+				5314CE7A1DCB3219007D9E1E /* MJPlayer_slider.png */,
+				5314CE7B1DCB3219007D9E1E /* MJPlayer_slider@2x.png */,
+				5314CE7C1DCB3219007D9E1E /* MJPlayer_slider@3x.png */,
+				5314CE6E1DCB31D0007D9E1E /* MJPlayer_pause.png */,
+				5314CE6F1DCB31D0007D9E1E /* MJPlayer_pause@2x.png */,
+				5314CE701DCB31D0007D9E1E /* MJPlayer_pause@3x.png */,
+				5314CE711DCB31D0007D9E1E /* MJPlayer_play.png */,
+				5314CE721DCB31D0007D9E1E /* MJPlayer_play@2x.png */,
+				5314CE731DCB31D0007D9E1E /* MJPlayer_play@3x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		531AF80E1DC71E190015221E /* MJPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5314CE6D1DCB31C7007D9E1E /* Image */,
+				531AF80F1DC71E420015221E /* MJPlayerView.h */,
+				531AF8101DC71E420015221E /* MJPlayerView.m */,
+			);
+			path = MJPlayer;
+			sourceTree = "<group>";
+		};
+		53B101B61DC23B6E007FC2DB = {
+			isa = PBXGroup;
+			children = (
+				53B101C11DC23B6E007FC2DB /* MJAVPlayer */,
+				53B101DB1DC23B6F007FC2DB /* MJAVPlayerTests */,
+				53B101E61DC23B6F007FC2DB /* MJAVPlayerUITests */,
+				53B101C01DC23B6E007FC2DB /* Products */,
+				53B101F81DC23B9E007FC2DB /* Frameworks */,
+				4B238B941EECE57AEFBDCA0C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		53B101C01DC23B6E007FC2DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53B101BF1DC23B6E007FC2DB /* MJAVPlayer.app */,
+				53B101D81DC23B6F007FC2DB /* MJAVPlayerTests.xctest */,
+				53B101E31DC23B6F007FC2DB /* MJAVPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53B101C11DC23B6E007FC2DB /* MJAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				531AF80E1DC71E190015221E /* MJPlayer */,
+				53B101C51DC23B6E007FC2DB /* AppDelegate.h */,
+				53B101C61DC23B6E007FC2DB /* AppDelegate.m */,
+				53B101C81DC23B6E007FC2DB /* ViewController.h */,
+				53B101C91DC23B6E007FC2DB /* ViewController.m */,
+				53B101CB1DC23B6E007FC2DB /* Main.storyboard */,
+				53B101CE1DC23B6E007FC2DB /* Assets.xcassets */,
+				53B101D01DC23B6E007FC2DB /* LaunchScreen.storyboard */,
+				53B101D31DC23B6E007FC2DB /* Info.plist */,
+				53B101C21DC23B6E007FC2DB /* Supporting Files */,
+			);
+			path = MJAVPlayer;
+			sourceTree = "<group>";
+		};
+		53B101C21DC23B6E007FC2DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53B101C31DC23B6E007FC2DB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		53B101DB1DC23B6F007FC2DB /* MJAVPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				53B101DC1DC23B6F007FC2DB /* MJAVPlayerTests.m */,
+				53B101DE1DC23B6F007FC2DB /* Info.plist */,
+			);
+			path = MJAVPlayerTests;
+			sourceTree = "<group>";
+		};
+		53B101E61DC23B6F007FC2DB /* MJAVPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53B101E71DC23B6F007FC2DB /* MJAVPlayerUITests.m */,
+				53B101E91DC23B6F007FC2DB /* Info.plist */,
+			);
+			path = MJAVPlayerUITests;
+			sourceTree = "<group>";
+		};
+		53B101F81DC23B9E007FC2DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53B102011DC24274007FC2DB /* UIKit.framework */,
+				53B101FF1DC2419F007FC2DB /* CoreGraphics.framework */,
+				53B101FD1DC23C95007FC2DB /* Foundation.framework */,
+				53B101FB1DC23C6F007FC2DB /* AVFoundation.framework */,
+				53B101F91DC23B9E007FC2DB /* MediaPlayer.framework */,
+				274056531D2FA3D212E7D6F9 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53B101BE1DC23B6E007FC2DB /* MJAVPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53B101EC1DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayer" */;
+			buildPhases = (
+				B8F16F83CC71D1005EB8A687 /* Check Pods Manifest.lock */,
+				53B101BB1DC23B6E007FC2DB /* Sources */,
+				53B101BD1DC23B6E007FC2DB /* Resources */,
+				53B101BC1DC23B6E007FC2DB /* Frameworks */,
+				DAC25CED55A1D77EEEF13458 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MJAVPlayer;
+			productName = MJAVPlayer;
+			productReference = 53B101BF1DC23B6E007FC2DB /* MJAVPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53B101D71DC23B6F007FC2DB /* MJAVPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53B101EF1DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayerTests" */;
+			buildPhases = (
+				53B101D41DC23B6F007FC2DB /* Sources */,
+				53B101D51DC23B6F007FC2DB /* Frameworks */,
+				53B101D61DC23B6F007FC2DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53B101DA1DC23B6F007FC2DB /* PBXTargetDependency */,
+			);
+			name = MJAVPlayerTests;
+			productName = MJAVPlayerTests;
+			productReference = 53B101D81DC23B6F007FC2DB /* MJAVPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53B101E21DC23B6F007FC2DB /* MJAVPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53B101F21DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayerUITests" */;
+			buildPhases = (
+				53B101DF1DC23B6F007FC2DB /* Sources */,
+				53B101E01DC23B6F007FC2DB /* Frameworks */,
+				53B101E11DC23B6F007FC2DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53B101E51DC23B6F007FC2DB /* PBXTargetDependency */,
+			);
+			name = MJAVPlayerUITests;
+			productName = MJAVPlayerUITests;
+			productReference = 53B101E31DC23B6F007FC2DB /* MJAVPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53B101B71DC23B6E007FC2DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = MJJ;
+				TargetAttributes = {
+					53B101BE1DC23B6E007FC2DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WEAA4M37A8;
+						ProvisioningStyle = Automatic;
+					};
+					53B101D71DC23B6F007FC2DB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 53B101BE1DC23B6E007FC2DB;
+					};
+					53B101E21DC23B6F007FC2DB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 53B101BE1DC23B6E007FC2DB;
+					};
+				};
+			};
+			buildConfigurationList = 53B101BA1DC23B6E007FC2DB /* Build configuration list for PBXProject "MJAVPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53B101B61DC23B6E007FC2DB;
+			productRefGroup = 53B101C01DC23B6E007FC2DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53B101BE1DC23B6E007FC2DB /* MJAVPlayer */,
+				53B101D71DC23B6F007FC2DB /* MJAVPlayerTests */,
+				53B101E21DC23B6F007FC2DB /* MJAVPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53B101BD1DC23B6E007FC2DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5314CE7D1DCB3219007D9E1E /* MJPlayer_slider.png in Resources */,
+				53B101D21DC23B6E007FC2DB /* LaunchScreen.storyboard in Resources */,
+				5314CE771DCB31D0007D9E1E /* MJPlayer_play.png in Resources */,
+				5314CE7E1DCB3219007D9E1E /* MJPlayer_slider@2x.png in Resources */,
+				5314CE781DCB31D0007D9E1E /* MJPlayer_play@2x.png in Resources */,
+				5314CE841DCB380E007D9E1E /* MJPlayer_fullscreen@2x.png in Resources */,
+				53B101CF1DC23B6E007FC2DB /* Assets.xcassets in Resources */,
+				5314CE7F1DCB3219007D9E1E /* MJPlayer_slider@3x.png in Resources */,
+				5314CE751DCB31D0007D9E1E /* MJPlayer_pause@2x.png in Resources */,
+				5314CE741DCB31D0007D9E1E /* MJPlayer_pause.png in Resources */,
+				5314CE8B1DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png in Resources */,
+				5314CE791DCB31D0007D9E1E /* MJPlayer_play@3x.png in Resources */,
+				5314CE831DCB380E007D9E1E /* MJPlayer_fullscreen.png in Resources */,
+				5314CE761DCB31D0007D9E1E /* MJPlayer_pause@3x.png in Resources */,
+				53B101CD1DC23B6E007FC2DB /* Main.storyboard in Resources */,
+				5314CE891DCB385E007D9E1E /* MJPlayer_shrinkscreen.png in Resources */,
+				5314CE851DCB380E007D9E1E /* MJPlayer_fullscreen@3x.png in Resources */,
+				5314CE8A1DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101D61DC23B6F007FC2DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101E11DC23B6F007FC2DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8F16F83CC71D1005EB8A687 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC25CED55A1D77EEEF13458 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53B101BB1DC23B6E007FC2DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B101CA1DC23B6E007FC2DB /* ViewController.m in Sources */,
+				531AF8111DC71E420015221E /* MJPlayerView.m in Sources */,
+				53B101C71DC23B6E007FC2DB /* AppDelegate.m in Sources */,
+				53B101C41DC23B6E007FC2DB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101D41DC23B6F007FC2DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B101DD1DC23B6F007FC2DB /* MJAVPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53B101DF1DC23B6F007FC2DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B101E81DC23B6F007FC2DB /* MJAVPlayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53B101DA1DC23B6F007FC2DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53B101BE1DC23B6E007FC2DB /* MJAVPlayer */;
+			targetProxy = 53B101D91DC23B6F007FC2DB /* PBXContainerItemProxy */;
+		};
+		53B101E51DC23B6F007FC2DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53B101BE1DC23B6E007FC2DB /* MJAVPlayer */;
+			targetProxy = 53B101E41DC23B6F007FC2DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53B101CB1DC23B6E007FC2DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B101CC1DC23B6E007FC2DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53B101D01DC23B6E007FC2DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53B101D11DC23B6E007FC2DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53B101EA1DC23B6F007FC2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53B101EB1DC23B6F007FC2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53B101ED1DC23B6F007FC2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 294FBF01DDCF6C2C905F5176 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WEAA4M37A8;
+				INFOPLIST_FILE = MJAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53B101EE1DC23B6F007FC2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E1F85A9309508AD543CAF3C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WEAA4M37A8;
+				INFOPLIST_FILE = MJAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53B101F01DC23B6F007FC2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MJAVPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MJAVPlayer.app/MJAVPlayer";
+			};
+			name = Debug;
+		};
+		53B101F11DC23B6F007FC2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MJAVPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MJAVPlayer.app/MJAVPlayer";
+			};
+			name = Release;
+		};
+		53B101F31DC23B6F007FC2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MJAVPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MJAVPlayer;
+			};
+			name = Debug;
+		};
+		53B101F41DC23B6F007FC2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MJAVPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MJJ.MJAVPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MJAVPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53B101BA1DC23B6E007FC2DB /* Build configuration list for PBXProject "MJAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B101EA1DC23B6F007FC2DB /* Debug */,
+				53B101EB1DC23B6F007FC2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53B101EC1DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B101ED1DC23B6F007FC2DB /* Debug */,
+				53B101EE1DC23B6F007FC2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53B101EF1DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B101F01DC23B6F007FC2DB /* Debug */,
+				53B101F11DC23B6F007FC2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53B101F21DC23B6F007FC2DB /* Build configuration list for PBXNativeTarget "MJAVPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B101F31DC23B6F007FC2DB /* Debug */,
+				53B101F41DC23B6F007FC2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53B101B71DC23B6E007FC2DB /* Project object */;
+}
