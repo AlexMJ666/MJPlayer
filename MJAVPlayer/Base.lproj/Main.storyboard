@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hLX-Hd-2LN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KAl-V0-ph8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXq-UF-9KM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="hLX-Hd-2LN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIL-tw-ub9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hA5-Ka-rys" kind="relationship" relationship="rootViewController" id="yN9-L8-nOI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1553" y="36"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="QNv-tO-Wao">
+            <objects>
+                <viewController id="hA5-Ka-rys" customClass="MJRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G64-Zt-MCj"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbV-nD-9er"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YUc-ff-8vW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1l-Qd-9rg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="2fX-nK-k1g"/>
+                                    <constraint firstAttribute="height" constant="30" id="Iy3-9p-ifl"/>
+                                </constraints>
+                                <state key="normal" title="play vedio"/>
+                                <connections>
+                                    <action selector="showPlay:" destination="hA5-Ka-rys" eventType="touchUpInside" id="R6Y-vV-vg5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a1l-Qd-9rg" firstAttribute="centerY" secondItem="YUc-ff-8vW" secondAttribute="centerY" constant="-214.5" id="BRp-c2-iRB"/>
+                            <constraint firstItem="a1l-Qd-9rg" firstAttribute="centerX" secondItem="YUc-ff-8vW" secondAttribute="centerX" id="f4u-s2-hvg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zjG-LW-DiP"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="playVedio" id="FB4-jc-qrB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLv-RH-qMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-737" y="36"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,6 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GHr-RM-dKZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

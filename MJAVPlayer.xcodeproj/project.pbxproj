@@ -36,6 +36,7 @@
 		53B101FE1DC23C95007FC2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101FD1DC23C95007FC2DB /* Foundation.framework */; };
 		53B102001DC2419F007FC2DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B101FF1DC2419F007FC2DB /* CoreGraphics.framework */; };
 		53B102021DC24274007FC2DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B102011DC24274007FC2DB /* UIKit.framework */; };
+		53C9A43C1DCC5AA0002DAB6C /* MJRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C9A43B1DCC5AA0002DAB6C /* MJRootViewController.m */; };
 		6C476545201B1A66D9DA2B20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274056531D2FA3D212E7D6F9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		53B101FD1DC23C95007FC2DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53B101FF1DC2419F007FC2DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		53B102011DC24274007FC2DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		53C9A43A1DCC5AA0002DAB6C /* MJRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRootViewController.h; sourceTree = "<group>"; };
+		53C9A43B1DCC5AA0002DAB6C /* MJRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				53B101C61DC23B6E007FC2DB /* AppDelegate.m */,
 				53B101C81DC23B6E007FC2DB /* ViewController.h */,
 				53B101C91DC23B6E007FC2DB /* ViewController.m */,
+				53C9A43A1DCC5AA0002DAB6C /* MJRootViewController.h */,
+				53C9A43B1DCC5AA0002DAB6C /* MJRootViewController.m */,
 				53B101CB1DC23B6E007FC2DB /* Main.storyboard */,
 				53B101CE1DC23B6E007FC2DB /* Assets.xcassets */,
 				53B101D01DC23B6E007FC2DB /* LaunchScreen.storyboard */,
@@ -434,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C9A43C1DCC5AA0002DAB6C /* MJRootViewController.m in Sources */,
 				53B101CA1DC23B6E007FC2DB /* ViewController.m in Sources */,
 				531AF8111DC71E420015221E /* MJPlayerView.m in Sources */,
 				53B101C71DC23B6E007FC2DB /* AppDelegate.m in Sources */,

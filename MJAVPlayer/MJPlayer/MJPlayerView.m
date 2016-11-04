@@ -216,6 +216,7 @@
 //监控时间变化
 -(void)listenTimeChange
 {
+    [self.player removeTimeObserver:self.playLabelTime];
     __weak typeof (self)self_ = self;
     self.playLabelTime = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
         CGFloat playTime = self_.player.currentTime.value/self_.player.currentTime.timescale;
@@ -244,6 +245,7 @@
     [self.player.currentItem removeObserver:self forKeyPath:@"status"];
     [self.player.currentItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
     [self.player.currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+    [self.player.currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
     [[NSNotificationCenter defaultCenter]removeObserver:self.player.currentItem];
 }
 @end
