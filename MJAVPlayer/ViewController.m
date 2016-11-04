@@ -34,10 +34,12 @@
 -(void)fullScreenOrShrinkScreenDelegate:(UIButton *)sender
 {
     if (sender.selected) {
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+        [self.navigationController setNavigationBarHidden:YES];
+        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeLeft) forKey:@"orientation"];
         self.playerView1.frame = CGRectMake(0, 0,kMainScreen_Width ,kMainScreen_Height );
     }else
     {
+        [self.navigationController setNavigationBarHidden:NO];
         self.playerView1.frame = CGRectMake(0, 0,kMainScreen_Height , kMainScreen_Width/2);
         [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
     }

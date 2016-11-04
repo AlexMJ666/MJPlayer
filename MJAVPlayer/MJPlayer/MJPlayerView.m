@@ -10,6 +10,10 @@
 
 #define kTimeLableZreo              @"00:00/00:00"
 @interface MJPlayerView()
+{
+    NSString* vedioUrl;
+    UITapGestureRecognizer *singleTapGestureRecognizer;
+}
 @property (nonatomic,strong) UIView* bottomControlView;                 //底部控制界面
 @property (nonatomic,strong) UISlider* timeProgress;                    //进度条
 @property (nonatomic,strong) UILabel* timeLabel;                        //时间显示label
@@ -17,7 +21,7 @@
 @property (nonatomic,strong) UIButton* fullScreenBtn;                   //全屏按钮
 @property (nonatomic ,strong) AVPlayerItem *playerItem;                 //AVPlyaer的播放资源
 @property (nonatomic,strong) NSTimer* playLabelTime;                    //获取播放时间的NSTime
-@property (nonatomic,strong) NSTimer* sliderTime;                       //获取进度条时间的NSTime
+@property (nonatomic,strong) UIButton* downLoadBtn;                      //下载按钮
 @end
 @implementation MJPlayerView
 
@@ -135,20 +139,66 @@
         make.width.equalTo(@(200));
         make.height.equalTo(@(21));
     }];
+    
+    
+    /*界面 ROUND 2********************************************************************************************/
+    self.downLoadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.downLoadBtn setImage:[UIImage imageNamed:@"MJPlayer_download"] forState:UIControlStateNormal];
+    [self.downLoadBtn setImage:[UIImage imageNamed:@"MJPlayer_not_download"] forState:UIControlStateSelected];
+    [self.downLoadBtn addTarget:self action:@selector(downLoadBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.downLoadBtn];
+    [self.downLoadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self);
+        make.right.equalTo(self).offset(-20);
+        make.height.equalTo(@(49));
+        make.width.equalTo(@(40));
+    }];
+    
+    //添加手势
+    singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+    [self addGestureRecognizer:singleTapGestureRecognizer];
+    //延迟隐藏控制界面
+    [self showAndHideControl:0];
 }
 
 -(void)initMJPlayer:(NSString*)vedioUrlStr
 {
-    NSURL *videoUrl = [NSURL URLWithString:vedioUrlStr];
-    self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
+    vedioUrl = vedioUrlStr;
+    NSURL *videoUrl = [NSURL URLWithString:vedioUrl];
+    if (![[[MJDownLoad shareInstanceManager]getLocalVedio:vedioUrl] isEqualToString:@""]) {
+        NSURL *sourceMovieUrl = [NSURL fileURLWithPath:[[MJDownLoad shareInstanceManager]getLocalVedio:vedioUrl]];
+        AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:sourceMovieUrl options:nil];
+        self.playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+        self.downLoadBtn.selected = YES;
+    }else
+    {
+        self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
+        [[MJDownLoad shareInstanceManager]downLoadWithUrl:vedioUrl];
+    }
+    self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
-    self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
 }
 
+-(void)singleTap:(UITapGestureRecognizer*)tapGesture
+{
+    __weak typeof (self)self_ = self;
+    [UIView animateWithDuration:0.2f animations:^{
+        self_.bottomControlView.alpha = 1;
+        self_.downLoadBtn.alpha = 1;
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.2f animations:^{
+                self_.bottomControlView.alpha = 0;
+                self_.downLoadBtn.alpha = 0;
+            }];
+        });
+    }];
+}
 #pragma Mark----timeProgress滑动停止事件
 -(void)sliderChange:(UISlider*)sender
 {
@@ -177,6 +227,18 @@
     
     if (_mjPlayerViewDelegate&&[_mjPlayerViewDelegate respondsToSelector:@selector(fullScreenOrShrinkScreenDelegate:)]) {
         [_mjPlayerViewDelegate fullScreenOrShrinkScreenDelegate:sender];
+    }
+}
+
+#pragma Mark----downLoadBtn下载按钮点击事件
+-(void)downLoadBtnPress:(UIButton*)sender
+{
+    if(!sender.selected)
+    {
+        [[MJDownLoad shareInstanceManager]downLoadWithUrl:vedioUrl];
+    }else
+    {
+        sender.userInteractionEnabled = NO;
     }
 }
 
@@ -237,6 +299,18 @@
         [formatter setDateFormat:@"mm:ss"];
     }
     return [formatter stringFromDate:timeDate];
+}
+
+//显示隐藏控制界面
+-(void)showAndHideControl:(NSInteger)alphaNum
+{
+    __weak typeof (self)self_ = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.2f animations:^{
+            self_.bottomControlView.alpha = alphaNum;
+            self_.downLoadBtn.alpha = alphaNum;
+        }];
+    });
 }
 
 -(void)dealloc
