@@ -183,7 +183,6 @@ typedef NS_ENUM(NSInteger, PanDirection){
     {
         [self removeGestureRecognizer:_panGes];
     }
-    
 }
 
 -(void)initMJPlayer:(NSString*)vedioUrlStr
@@ -228,19 +227,18 @@ typedef NS_ENUM(NSInteger, PanDirection){
 #pragma Mark----滑动手势响应事件
 -(void)controlVolmeAndLight:(UIPanGestureRecognizer*)ges
 {
-    //根据在view上Pan的位置，确定是调音量还是亮度
+    //根据位置，确定是调音量还是亮度
     CGPoint locationPoint = [ges locationInView:self];
     
-    // 我们要响应水平移动和垂直移动
-    // 根据上次和本次移动的位置，算出一个速率的point
-    CGPoint veloctyPoint = [ges velocityInView:self];
+    // 获取滑动速度
+    CGPoint speed = [ges velocityInView:self];
     
     // 判断是垂直移动还是水平移动
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:{ // 开始移动
             // 使用绝对值来判断移动的方向
-            CGFloat x = fabs(veloctyPoint.x);
-            CGFloat y = fabs(veloctyPoint.y);
+            CGFloat x = fabs(speed.x);
+            CGFloat y = fabs(speed.y);
             if (x < y){ // 垂直移动
                 self.panDirection = PanDirectionVerticalMoved;
                 // 开始滑动的时候,状态改为正在控制音量
@@ -259,7 +257,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
                     break;
                 }
                 case PanDirectionVerticalMoved:{
-                    [self verticalMoved:veloctyPoint.y]; // 垂直移动方法只要y方向的值
+                    [self verticalMoved:speed.y]; // 垂直移动方法只要y方向的值
                     break;
                 }
                 default:
@@ -456,6 +454,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
  */
 - (void)verticalMoved:(CGFloat)value
 {
+    //该value为手指的滑动速度，一般最快速度值不会超过10000，保证在0-1之间，往下滑为正，往上滑为负 所以用 “-=”
     NSLog(@"%f",value);
     if (self.isVolume) {
         self.volumeViewSlider.value -= value / 10000;
