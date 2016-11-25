@@ -9,7 +9,14 @@
 #import "MJPlayerView.h"
 
 #define kTimeLableZreo              @"00:00/00:00"
-@interface MJPlayerView()
+
+// 枚举值，包含水平移动方向和垂直移动方向
+typedef NS_ENUM(NSInteger, PanDirection){
+    PanDirectionHorizontalMoved, // 横向移动
+    PanDirectionVerticalMoved    // 纵向移动
+};
+
+@interface MJPlayerView()<UIGestureRecognizerDelegate>
 {
     NSString* vedioUrl;
     UITapGestureRecognizer *singleTapGestureRecognizer;
@@ -22,6 +29,10 @@
 @property (nonatomic ,strong) AVPlayerItem *playerItem;                 //AVPlyaer的播放资源
 @property (nonatomic,strong) NSTimer* playLabelTime;                    //获取播放时间的NSTime
 @property (nonatomic,strong) UIButton* downLoadBtn;                      //下载按钮
+@property (nonatomic,strong) UIPanGestureRecognizer* panGes;            //控制音量及亮度手势
+@property (nonatomic, assign) PanDirection panDirection;      //定义一个实例变量，保存枚举值
+@property (nonatomic, strong) UISlider *volumeViewSlider;       //调节滑竿
+@property (nonatomic, assign) BOOL isVolume;                    //是否在调节音量
 @end
 @implementation MJPlayerView
 
@@ -162,20 +173,34 @@
     [self showAndHideControl:0];
 }
 
+#pragma Mark -- 添加手势控制声音及亮度
+-(void)addControlVolmeAndLight:(BOOL)isLandscape
+{
+    if (isLandscape) {
+        _panGes = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(controlVolmeAndLight:)];
+        [self addGestureRecognizer:_panGes];
+    }else
+    {
+        [self removeGestureRecognizer:_panGes];
+    }
+    
+}
+
 -(void)initMJPlayer:(NSString*)vedioUrlStr
 {
     vedioUrl = vedioUrlStr;
     NSURL *videoUrl = [NSURL URLWithString:vedioUrl];
-    if (![[[MJDownLoad shareInstanceManager]getLocalVedio:vedioUrl] isEqualToString:@""]) {
+    if ([[[MJDownLoad shareInstanceManager]getLocalVedio:vedioUrl] isEqualToString:@""]) {
+        self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
+        [[MJDownLoad shareInstanceManager]downLoadWithUrl:vedioUrl];
+    }else
+    {
         NSURL *sourceMovieUrl = [NSURL fileURLWithPath:[[MJDownLoad shareInstanceManager]getLocalVedio:vedioUrl]];
         AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:sourceMovieUrl options:nil];
         self.playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
         self.downLoadBtn.selected = YES;
-    }else
-    {
-        self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
-        [[MJDownLoad shareInstanceManager]downLoadWithUrl:vedioUrl];
     }
+    [self setLightAndVolume];
     self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
@@ -199,6 +224,72 @@
         });
     }];
 }
+
+#pragma Mark----滑动手势响应事件
+-(void)controlVolmeAndLight:(UIPanGestureRecognizer*)ges
+{
+    //根据在view上Pan的位置，确定是调音量还是亮度
+    CGPoint locationPoint = [ges locationInView:self];
+    
+    // 我们要响应水平移动和垂直移动
+    // 根据上次和本次移动的位置，算出一个速率的point
+    CGPoint veloctyPoint = [ges velocityInView:self];
+    
+    // 判断是垂直移动还是水平移动
+    switch (ges.state) {
+        case UIGestureRecognizerStateBegan:{ // 开始移动
+            // 使用绝对值来判断移动的方向
+            CGFloat x = fabs(veloctyPoint.x);
+            CGFloat y = fabs(veloctyPoint.y);
+            if (x < y){ // 垂直移动
+                self.panDirection = PanDirectionVerticalMoved;
+                // 开始滑动的时候,状态改为正在控制音量
+                if (locationPoint.x > self.bounds.size.width / 2) {
+                    self.isVolume = YES;
+                }else { // 状态改为显示亮度调节
+                    self.isVolume = NO;
+                }
+            }
+            break;
+        }
+        case UIGestureRecognizerStateChanged:{ // 正在移动
+            switch (self.panDirection) {
+                case PanDirectionHorizontalMoved:{
+                    //[self horizontalMoved:veloctyPoint.x]; // 水平移动的方法只要x方向的值
+                    break;
+                }
+                case PanDirectionVerticalMoved:{
+                    [self verticalMoved:veloctyPoint.y]; // 垂直移动方法只要y方向的值
+                    break;
+                }
+                default:
+                    break;
+            }
+            break;
+        }
+        case UIGestureRecognizerStateEnded:{ // 移动停止
+            // 移动结束也需要判断垂直或者平移
+            // 比如水平移动结束时，要快进到指定位置，如果这里没有判断，当我们调节音量完之后，会出现屏幕跳动的bug
+            switch (self.panDirection) {
+                case PanDirectionHorizontalMoved:{
+                    break;
+                }
+                case PanDirectionVerticalMoved:{
+                    // 垂直移动结束后，把状态改为不再控制音量
+                    self.isVolume = NO;
+                    break;
+                }
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+
+}
+
 #pragma Mark----timeProgress滑动停止事件
 -(void)sliderChange:(UISlider*)sender
 {
@@ -224,7 +315,7 @@
 -(void)fullScreenOrShrinkScreen:(UIButton*)sender
 {
     sender.selected = !sender.selected;
-    
+    [self addControlVolmeAndLight:sender.selected];
     if (_mjPlayerViewDelegate&&[_mjPlayerViewDelegate respondsToSelector:@selector(fullScreenOrShrinkScreenDelegate:)]) {
         [_mjPlayerViewDelegate fullScreenOrShrinkScreenDelegate:sender];
     }
@@ -272,7 +363,6 @@
     } else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
         [self.player play];
     }
-    
 }
 
 //监控时间变化
@@ -311,6 +401,68 @@
             self_.downLoadBtn.alpha = alphaNum;
         }];
     });
+}
+
+/**
+ *  获取系统音量
+ */
+- (void)setLightAndVolume
+{
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    _volumeViewSlider = nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            _volumeViewSlider = (UISlider *)view;
+            break;
+        }
+    }
+    // 监听耳机插入和拔掉通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mic:) name:AVAudioSessionRouteChangeNotification object:nil];
+}
+
+/**
+ *  耳机插入、拔出事件
+ */
+- (void)mic:(NSNotification*)notify
+{
+    NSDictionary *dic = notify.userInfo;
+    
+    NSInteger isEarPhone = [[dic valueForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+    
+    switch (isEarPhone) {
+            
+        case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+            // 耳机插入
+            break;
+            
+        case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+        {
+            // 拔掉耳机继续播放
+            [self StartPlay];
+        }
+            break;
+            
+        case AVAudioSessionRouteChangeReasonCategoryChange:
+            // called at start - also when other audio wants to play
+            NSLog(@"AVAudioSessionRouteChangeReasonCategoryChange");
+            break;
+    }
+}
+
+/**
+ *  pan垂直移动的方法
+ *
+ *  @param value void
+ */
+- (void)verticalMoved:(CGFloat)value
+{
+    NSLog(@"%f",value);
+    if (self.isVolume) {
+        self.volumeViewSlider.value -= value / 10000;
+    }else
+    {
+        ([UIScreen mainScreen].brightness -= value / 10000);
+    }
 }
 
 -(void)dealloc

@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry.h>
 #import "MJDownLoad.h"
-
+#import <MediaPlayer/MediaPlayer.h>
 #define kMainScreen_Height [UIScreen mainScreen].bounds.size.height
 #define kMainScreen_Width [UIScreen mainScreen].bounds.size.width
 
