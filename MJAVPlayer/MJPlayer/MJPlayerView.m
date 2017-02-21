@@ -72,6 +72,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
 - (AVPlayer *)player {
     return [(AVPlayerLayer *)[self layer] player];
 }
+
 /**重写set方法
  *
  */

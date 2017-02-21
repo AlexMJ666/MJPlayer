@@ -23,6 +23,8 @@
 		5314CE8A1DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE871DCB385E007D9E1E /* MJPlayer_shrinkscreen@2x.png */; };
 		5314CE8B1DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5314CE881DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png */; };
 		531AF8111DC71E420015221E /* MJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AF8101DC71E420015221E /* MJPlayerView.m */; };
+		5342F1D21DE7FD5E007CB721 /* ShotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342F1D11DE7FD5E007CB721 /* ShotLabel.m */; };
+		5342F1D51DE7FD6F007CB721 /* ShotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342F1D41DE7FD6F007CB721 /* ShotModel.m */; };
 		53B101C41DC23B6E007FC2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C31DC23B6E007FC2DB /* main.m */; };
 		53B101C71DC23B6E007FC2DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C61DC23B6E007FC2DB /* AppDelegate.m */; };
 		53B101CA1DC23B6E007FC2DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B101C91DC23B6E007FC2DB /* ViewController.m */; };
@@ -83,6 +85,10 @@
 		5314CE881DCB385E007D9E1E /* MJPlayer_shrinkscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MJPlayer_shrinkscreen@3x.png"; sourceTree = "<group>"; };
 		531AF80F1DC71E420015221E /* MJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPlayerView.h; sourceTree = "<group>"; };
 		531AF8101DC71E420015221E /* MJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPlayerView.m; sourceTree = "<group>"; };
+		5342F1D01DE7FD5E007CB721 /* ShotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotLabel.h; sourceTree = "<group>"; };
+		5342F1D11DE7FD5E007CB721 /* ShotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotLabel.m; sourceTree = "<group>"; };
+		5342F1D31DE7FD6F007CB721 /* ShotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotModel.h; sourceTree = "<group>"; };
+		5342F1D41DE7FD6F007CB721 /* ShotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotModel.m; sourceTree = "<group>"; };
 		53B101BF1DC23B6E007FC2DB /* MJAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B101C31DC23B6E007FC2DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53B101C51DC23B6E007FC2DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,6 +194,10 @@
 				531AF8101DC71E420015221E /* MJPlayerView.m */,
 				53C9A43D1DCC5E71002DAB6C /* MJDownLoad.h */,
 				53C9A43E1DCC5E71002DAB6C /* MJDownLoad.m */,
+				5342F1D01DE7FD5E007CB721 /* ShotLabel.h */,
+				5342F1D11DE7FD5E007CB721 /* ShotLabel.m */,
+				5342F1D31DE7FD6F007CB721 /* ShotModel.h */,
+				5342F1D41DE7FD6F007CB721 /* ShotModel.m */,
 			);
 			path = MJPlayer;
 			sourceTree = "<group>";
@@ -461,9 +471,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C9A43C1DCC5AA0002DAB6C /* MJRootViewController.m in Sources */,
+				5342F1D21DE7FD5E007CB721 /* ShotLabel.m in Sources */,
 				53B101CA1DC23B6E007FC2DB /* ViewController.m in Sources */,
 				53C9A43F1DCC5E71002DAB6C /* MJDownLoad.m in Sources */,
 				531AF8111DC71E420015221E /* MJPlayerView.m in Sources */,
+				5342F1D51DE7FD6F007CB721 /* ShotModel.m in Sources */,
 				53B101C71DC23B6E007FC2DB /* AppDelegate.m in Sources */,
 				53B101C41DC23B6E007FC2DB /* main.m in Sources */,
 			);

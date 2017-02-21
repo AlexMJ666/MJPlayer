@@ -10,8 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MJPlayerView.h"
 
-
-
 @interface ViewController ()<MJPlayerViewDelegate>
 @property (nonatomic ,strong) AVPlayer *player;
 @property (nonatomic ,strong) AVPlayerItem *playerItem;
